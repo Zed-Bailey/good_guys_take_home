@@ -2,10 +2,10 @@ import StarRating from "./StarRating";
 
 function Review({review}) {
     return (
-        
+
         <div className="flex flex-col sm:flex-row ">
 
-            {/* Review rating */}
+            {/* Review star rating */}
             <div className="min-w-fit flex flex-col items-center order-2 mt-2 sm:mt-0 sm:order-1">
                 <StarRating stars={review.RATING}/>
                 

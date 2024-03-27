@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import StarRating from "./StarRating";
 import { StarFilled } from "./Star";
 import { ImageIcon } from "./ImageIcon";
@@ -16,6 +16,7 @@ const RatingDistribution = ({ratings}) => {
 
     // counts the number of ratings for each rating
     useMemo(() => {
+        // count the number of ratings for each rating bucket, this is used to calculate the rating percentage for each bucket
         let rf = {
             five: ratings.filter(x => x.RATING === 5).length,
             four: ratings.filter(x => x.RATING === 4).length,
@@ -53,7 +54,6 @@ const RatingDistribution = ({ratings}) => {
 
 function RatingOverview({ratings}) {
     
-
     const [ratingDistribution, setRatingDistribution] = useState({
         pctRecommend: 0,
         avgRating : 0,
@@ -61,7 +61,10 @@ function RatingOverview({ratings}) {
     });
 
     useMemo(() => {
+        // filter all the ratings to count all users who recommend the product
         let numRecommended = ratings.filter(x => x.RECOMMENDATION === "TRUE").length;
+        
+        // sum all the ratings
         let totalRating = ratings.filter(x => x.RATING > 0).reduce((prev, curr) => prev + curr.RATING , 0);
 
         setRatingDistribution({

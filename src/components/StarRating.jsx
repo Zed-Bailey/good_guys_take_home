@@ -1,5 +1,10 @@
 import { StarFilled, StarOutlined } from "./Star";
 
+/**
+ * Displays a star rating. If number is less then 5 then empty outline stars will be displayed
+ * @param {number} param0 the number of stars to display out of 5
+ * @returns 
+ */
 function StarRating({stars}) {
     
     return (

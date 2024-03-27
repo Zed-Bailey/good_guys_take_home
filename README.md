@@ -6,12 +6,20 @@ TailwindCSS is used for styling
 
 SVG icons are from [https://iconmonstr.com](https://iconmonstr.com)
 
+The site is responsive and content appropriately shifts based on screen size
+
+The UI has been broken up into reusable components, which allows for faster development and easier maintenance in the future
+
+## Deployed site
+
+Site has also been deployed on vercel and can be viewed at [https://good-guys-take-home.vercel.app/](https://good-guys-take-home.vercel.app/)
+
+
 ## Running
 ```
 npm install
 npm run start
 ```
-
 
 ## Brief 
 
